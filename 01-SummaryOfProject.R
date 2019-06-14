@@ -1,24 +1,21 @@
-# Sumário do projeto
+# Project Summary
+
+### Fundaments ###
 #
-# setwd("F:/FCD/BigDataRAzure/Cap17-20/Mini-Projeto1")
+# 1. Problem definition and comprehension of context
+#
+# 2. Identification of entities and its features
+#
+# 3. Collect data that represents entities
 
 
-### Fundamentos ###
-#
-# 1. Definição de problema e compreensão de contexto
-#
-# 2. Identificação de entidades e atributos
-#
-# 3. Coleta de dados que representem a entidade.
-
-
-### Data Wrangling ###
+### Data Mining/Wrangling ###
 #
 # 1. Understand & Tidy the dataset
 #
 # 2. Understand & Analyse: hypothesis generation
 #
-# 3. Understand & transform (Feature Engineering)
+# 3. Understand & Transform (Feature Engineering)
 #
 # 4. Data Exploration: hypothesis confirmation
 #
@@ -38,13 +35,13 @@
 # 5. Tell the story of data
 
 
-# _________________________________Fundamentos____________________________________ #
+# _________________________________Fundaments_____________________________________ #
 #
-# 1.Problema:
-# 2.Contexto:
-# 3.Entidades:
+# 1.Problem:
+# 2.Context:
+# 3.Entities:
 #
-# ________________________________Data_Wrangling__________________________________ #
+# ____________________________Data_Mining/Wrangling________________________________ #
 #
 #
 #
