@@ -1,0 +1,63 @@
+# Web Scraping Twitter's content
+# 04-DataStoryTelling
+# This is a sequence of script 03-DataWrangling
+
+# Installing the necessary packages
+# install.packages("tidyverse")
+# install.packages("twitteR")
+# install.packages("tidytext")
+# install.packages("gridExtra")
+# install.packages("stopwords")
+
+# Loading the necessary packages
+# library(tidyverse)
+# library(twitteR)
+# library(tidytext)
+# library(gridExtra)
+
+
+# Ploting the first 20 words
+# For more information, see the help of these functions.
+clean_tweet_words %>% 
+  count(word, sort=T) %>% 
+  slice(1:20) %>% 
+  ggplot(aes(x = reorder(word, n, function(n) -n), y = n, fill = n)) + 
+  geom_bar(stat = "identity") + 
+  xlab("First 20 words - list_snowball") +
+  ylab("Frequency")
+
+
+# Getting the words that match positive and negative sentiments
+# For more information, see the help of these functions.
+sentiments <- tidytext::get_sentiments("bing")
+
+tweet_sentiment <- clean_tweet_words %>% 
+  left_join(sentiments) %>% 
+  filter(sentiment != "NA") # or drop_na()
+
+table_resume <- tweet_sentiment %>% 
+  group_by(sentiment) %>% 
+  summarise(total = n()) %>% 
+  mutate(percent = total/sum(total) )
+
+
+# Other plots
+# For more information, see the help of these functions.
+ggplot(tweet_sentiment, aes(sentiment)) +
+  geom_bar(aes(fill = sentiment)) +
+  guides(fill=FALSE)
+
+
+ggplot(data=table_resume, aes(x=sentiment, y=percent, group=1)) + 
+  geom_line(colour="red",linetype="dashed", size=1.5) + 
+  geom_point(colour="red", size=4, shape=19) + 
+  expand_limits(y=0) 
+
+
+clean_tweet_words %>%
+  inner_join(get_sentiments("bing")) %>%
+  count(word, sentiment, sort = TRUE) %>%
+  reshape2::acast(word ~ sentiment, value.var = "n", fill = 0) %>%
+  wordcloud::comparison.cloud(colors = c("#F8766D", "#00BFC4"), max.words = 70)
+
+

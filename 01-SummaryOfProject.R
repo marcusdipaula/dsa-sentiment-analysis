@@ -37,20 +37,13 @@
 
 # _________________________________Fundaments_____________________________________ #
 #
-# 1.Problem:
-# 2.Context:
-# 3.Entities:
+# 1.Problem: Which sentiment prevails the most on the recent comments related to the 
+# President Trump? Is it positive or is it negative?
 #
-# ____________________________Data_Mining/Wrangling________________________________ #
+# Context: The acts of President Trump are polemic to some and applauded by others.
+# Let's see which sentiments prevail the most on the 2000 recent comments on twitter.
 #
-#
-#
-#
-#
-# _______________________________Data_StoryTelling________________________________ #
-#
-#
-#
-#
-#
-# ________________________________________________________________________________ #
+# 2.Entities: comments on twitter that has "President Trump" in its content
+
+
+
