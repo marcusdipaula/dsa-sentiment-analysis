@@ -52,10 +52,14 @@ hashtag_tweets <- hashtag_tweets %>%
 # For more information, see the help of these functions.
 hashtag_tweets %>% 
   count(V1, sort = T) %>% 
+  top_n(10) %>% 
   ggplot(aes(x = reorder(V1, n, function(n) -n), y = n, fill = n)) +
   geom_bar(stat="identity") +
   theme(axis.text.x = element_text(angle = 45, 
-                                   hjust = 1))
+                                   hjust = 1)) +
+  xlab("First 10 hashtags") +
+  ylab("Frequency")
+
 
 #### Wrangling on tweets for exploratory analysis #####
 
@@ -90,7 +94,9 @@ tweet_words <- clean_tweets %>%
 # For more information, see the help of these functions.
 list_stopwords_iso <- stopwords::stopwords(language = "en", 
                                            source = "stopwords-iso") %>% 
-                                    enframe(name = NULL)
+                                    enframe(name = NULL) %>% 
+                                    add_row(value = c("trump", "president"))
+
 # This is an alternative list:
 # list_snowball <- stopwords::stopwords(language = "en", source = "snowball") %>% 
 #                     enframe(name = NULL)
