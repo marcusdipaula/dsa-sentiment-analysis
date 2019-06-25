@@ -16,11 +16,11 @@ These are some results of this short analysis:
 
 <img src="Plots/word_cloud_comparison.PNG" />
 
-<img src="Plots/geom_bar-first_10_sentiments_by_frequency.PNG" width="576" />
+<img src="Plots/geom_bar-first_10_sentiments_by_frequency.PNG" />
 
-<img src="Plots/geom_bar-sentiments.PNG" width="576" />
+<img src="Plots/geom_bar-sentiments.PNG" />
 
-<img src="Plots/geom_point-sentiments_by_percentage.PNG" width="576" />
+<img src="Plots/geom_point-sentiments_by_percentage.PNG" />
 
 
 
